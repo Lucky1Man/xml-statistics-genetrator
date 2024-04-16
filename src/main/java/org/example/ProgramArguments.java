@@ -1,7 +1,10 @@
 package org.example;
 
+import org.apache.commons.io.FileUtils;
+
 import java.io.File;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
@@ -38,11 +41,16 @@ public class ProgramArguments {
         }
         try {
             String jsonDirPath = validArgument[ARGUMENT_VALUE];
-            File jsonDir = new File(this.getClass().getClassLoader().getResource(jsonDirPath).toURI());
+            URL resource = this.getClass().getClassLoader().getResource(jsonDirPath);
+            File jsonDir;
+            if(resource != null) {
+                jsonDir = new File(resource.toURI());
+            } else
+                jsonDir = FileUtils.getFile(jsonDirPath);
             if (jsonDir.isFile()) {
                 throw new IllegalArgumentException("Given path is pointing to a file: " + jsonDirPath);
             }
-            for (File innerFile : jsonDir.listFiles()) {
+            for (File innerFile : FileUtils.listFiles(jsonDir, null, false)) {
                 if (innerFile.isFile()) {
                     if (Arrays.asList(innerFile.getName().split("\\.")).contains("json")) {
                         jsonFilePaths.add(innerFile.getAbsolutePath());
@@ -51,7 +59,6 @@ public class ProgramArguments {
                     }
                 }
             }
-
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }

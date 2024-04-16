@@ -95,9 +95,7 @@ public class App {
     }
 
     private static String getAbsolutePath(String fieldName) {
-        ClassLoader classLoader = App.class.getClassLoader();
-        File resourcesDirectory = new File(classLoader.getResource("./").getFile());
-        return new File(resourcesDirectory, "statistics_by_%s.xml".formatted(fieldName)).getAbsolutePath();
+        return new File("statistics_by_%s.xml".formatted(fieldName)).getAbsolutePath();
     }
 
 }

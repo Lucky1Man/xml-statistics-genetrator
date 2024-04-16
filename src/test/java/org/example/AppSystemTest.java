@@ -6,6 +6,8 @@ import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -38,9 +40,11 @@ class AppSystemTest {
         XmlMapper xmlMapper = new XmlMapper();
         ClassLoader classLoader = xmlMapper.getClass().getClassLoader();
         JsonNode expected = xmlMapper.readTree(new File(classLoader.getResource(pathToExpected).toURI())).iterator().next();
-        JsonNode result = xmlMapper.readTree(new File(classLoader.getResource(pathToResult).toURI())).iterator().next();;
+        File resultFile = new File(pathToResult);
+        JsonNode result = xmlMapper.readTree(resultFile).iterator().next();;
         assertEquals(expected.size(), result.size(), pathToResult + " does not have same amount of elements");
         assertTrue(checkInclusion(expected, result), pathToResult + " should contain all expected elements");
+        Files.delete(Path.of(resultFile.toURI()));
     }
 
     private static boolean checkInclusion(JsonNode expected, JsonNode result) {
