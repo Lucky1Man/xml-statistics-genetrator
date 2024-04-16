@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class AppSystemTest {
 
     @Test
-    void main_shouldWireEverythingRightAndProduceRightStatistics_arguments() {
+    void main_shouldWireEverythingRightAndProduceRightStatistics_forGivenArguments() {
         //given
         String[] args = new String[2];
         args[0] = "--JSON_DIR=./system";

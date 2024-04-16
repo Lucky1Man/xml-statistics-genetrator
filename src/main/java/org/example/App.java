@@ -27,12 +27,14 @@ public class App {
                 getAllParsers(arguments.getJsonFilePaths()),
                 getStatsConsumers()
         )) {
+            long start = System.currentTimeMillis();
             ReadersFutureAndConsumersFuture futures = jsonStatisticsProcessor.run();
             futures.getReadersFuture().get();
             Optional<CompletableFuture<Void>> consumersFuture = futures.getConsumersFuture();
             if (consumersFuture.isPresent()) {
                 consumersFuture.get().get();
             }
+            System.out.println("Execution time: " + (System.currentTimeMillis() - start) + " milliseconds");
         } catch (ExecutionException | InterruptedException e) {
             throw new RuntimeException(e);
         }
