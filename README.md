@@ -4,7 +4,8 @@
 ### 3) run ```maven exec:exec``` inside cloned dir
 The output will be inside the directory from which you were running maven commands, if you are running commands outside of cloned dir you will need to adjust --JSON_DIR argument.<br>
 The project contains some dummy data inside resources dir.<br>
-You can also use the generate-json.py script located in resources/scripts.
+You can also use the generate-json.py script located in resources/scripts.<br>
+### You can find examples of input files inside resources/medium, and output files inside the root of this repository: statistics_by_executorId.xml, statistics_by_guarantorEmails.xml 
 
 ### Entities of this project: 
 ![image](https://github.com/Lucky1Man/xml-statistics-genetrator/assets/86126779/788b652d-5679-4c8a-8fb8-2a3cc6142b9e)
