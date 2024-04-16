@@ -1,0 +1,14 @@
+<statistics>
+  <item>
+    <value>ecooper@example.com</value>
+    <count>10</count>
+  </item>
+  <item>
+    <value>fisherjuan@example.com</value>
+    <count>2</count>
+  </item>
+  <item>
+    <value>ngraham@example.com</value>
+    <count>7</count>
+  </item>
+</statistics>

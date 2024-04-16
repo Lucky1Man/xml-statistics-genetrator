@@ -1,0 +1,41 @@
+{
+  "nullValue": null,
+  "booleanValue": true,
+  "integerValue": 42,
+  "floatValue": 3.14,
+  "stringValue": "Hello, world!",
+  "emptyString": "",
+  "arrayValue": [1, 2, 3],
+  "emptyArray": [],
+  "nestedArray": [[1, 2], [3, 4]],
+  "objectValue": {"key": "value1"},
+  "emptyObject": {},
+  "nestedObject": {"nested": {"key": "value2"}},
+  "objectsInArray": [
+    {
+      "key": "value3"
+    },
+    {
+      "nestedArrayWithMixed": [
+        {"key": "value4"},
+        "value5",
+        "value6"
+      ]
+    }
+  ],
+  "unicodeString": "Unicode characters: \u00E9 \u20AC \uD83D\uDE00",
+  "escapedString": "Escaped characters: \\n \\t \\/ \\\" \\\\",
+  "longString": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  "bigInteger": 9223372036854775807,
+  "bigFloat": 1.7976931348623157e+308,
+  "negativeInteger": -42,
+  "negativeFloat": -3.14,
+  "scientificNotation": 2.998e8,
+  "": "value7",
+  "infinityValue": "Infinity",
+  "negativeInfinityValue": "-Infinity",
+  "nanValue": "NaN",
+  "zeroValue": 0,
+  "negativeZeroValue": -0,
+  "largeExponent": 1e1000
+}
