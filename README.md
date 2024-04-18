@@ -14,7 +14,7 @@ You can also use the generate-json.py script located in resources/scripts.<br>
 # Concurrency tests
 My machine has 6 real cores.<br>
 Short conclusion: The difference can be seen with more files and bigger sizes of files. <br>
-If I limit max ram usage to 40mb(when I process 4 files each 100_000 records their total size is more than 300mb) the difference will be seen only on vast amounts of data and will be around ~50-100 milliseconds.
+All tests were made on unlimited RAM. If I limit max ram usage to 40mb(when I process 4 files each 100_000 records their total size is more than 300mb) the difference will be seen only on vast amounts of data and will be around ~50-100 milliseconds.
 ## 2 files with 10_000 records per each file
 ### 1 thread
 ![image](https://github.com/Lucky1Man/xml-statistics-genetrator/assets/86126779/0e836711-2b3a-4af9-8041-a2ffb3697379)
